@@ -23,14 +23,14 @@ public interface LoginContract {
         void showMsg(String msg);
     }
 
-    abstract class Presenter extends BasePresenter<Model, View> {
-        public abstract void login(String name, String pass);
-
-        @Override
-        public void onStart() {
-            mRxManage.on(C.EVENT_LOGIN, o -> mView.showMsg(o.toString()));
-            mRxManage.on(C.EVENT_LOGIN_INVALID, o -> mView.showMsg(o.toString()));
-
-        }
-    }
+//    abstract class Presenter extends BasePresenter<Model, View> {
+//        public abstract void login(String name, String pass);
+//
+//        @Override
+//        public void onStart() {
+//            mRxManage.on(C.EVENT_LOGIN, o -> mView.showMsg(o.toString()));
+//            mRxManage.on(C.EVENT_LOGIN_INVALID, o -> mView.showMsg(o.toString()));
+//
+//        }
+//    }
 }

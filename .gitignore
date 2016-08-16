@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/.idea/
+app/libs/
+app/src/main/java/com/mvp/rutong/frame/cmp/register/
+app/src/main/java/com/mvp/rutong/frame/ui/register/
+app/src/main/java/com/mvp/rutong/frame/widget/
+app/src/main/res/drawable/

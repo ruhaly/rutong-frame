@@ -1,4 +1,4 @@
-package com.mvp.rutong.frame.base.util;
+package com.mvp.rutong.frame;
 
 import android.os.Environment;
 import android.text.TextUtils;
@@ -8,7 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class LogUtil {
+public class L {
 
     private static boolean fileDebug = true;
 

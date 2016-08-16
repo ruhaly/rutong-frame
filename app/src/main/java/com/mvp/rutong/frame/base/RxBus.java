@@ -3,7 +3,7 @@ package com.mvp.rutong.frame.base;
 import android.support.annotation.NonNull;
 
 
-import com.mvp.rutong.frame.base.util.LogUtil;
+import com.mvp.rutong.frame.L;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -64,7 +64,7 @@ public class RxBus {
         }
         Subject<T, T> subject;
         subjectList.add(subject = PublishSubject.create());
-        LogUtil.i("register", tag + "  size:" + subjectList.size());
+        L.i("register", tag + "  size:" + subjectList.size());
         return subject;
     }
 
@@ -93,7 +93,7 @@ public class RxBus {
             subjects.remove((Subject<?, ?>) observable);
             if (isEmpty(subjects)) {
                 subjectMapper.remove(tag);
-                LogUtil.i("register", tag + "  size:" + subjects.size());
+                L.i("register", tag + "  size:" + subjects.size());
             }
         }
         return $();
@@ -110,12 +110,12 @@ public class RxBus {
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void post(@NonNull Object tag, @NonNull Object content) {
-        LogUtil.i("onEvent", "eventName: " + tag);
+        L.i("onEvent", "eventName: " + tag);
         List<Subject> subjectList = subjectMapper.get(tag);
         if (!isEmpty(subjectList)) {
             for (Subject subject : subjectList) {
                 subject.onNext(content);
-                LogUtil.i("onEvent", "eventName: " + tag);
+                L.i("onEvent", "eventName: " + tag);
             }
         }
     }

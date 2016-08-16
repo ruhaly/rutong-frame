@@ -17,10 +17,7 @@ public abstract class BasePresenter<M, V> {
     public void setVM(V v, M m) {
         this.mView = v;
         this.mModel = m;
-        this.onStart();
     }
-
-    public abstract void onStart();
 
     public void onDestroy() {
         mRxManage.clear();

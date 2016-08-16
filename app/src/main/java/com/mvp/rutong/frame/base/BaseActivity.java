@@ -40,6 +40,9 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         mModel = TUtil.getT(this, 1);
         this.initView();
         this.initPresenter();
+        if (this instanceof BaseView) {
+            mPresenter.setVM(this, mModel);
+        }
     }
 
 
@@ -93,4 +96,12 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
      * 简单页面无需mvp就不用管此方法即可,完美兼容各种实际场景的变通
      */
     public abstract void initPresenter();
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (null != mPresenter) {
+            mPresenter.onDestroy();
+        }
+    }
 }

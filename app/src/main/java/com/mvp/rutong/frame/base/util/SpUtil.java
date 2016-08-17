@@ -10,6 +10,9 @@ import com.mvp.rutong.frame.base.BaseActivity;
 public class SpUtil {
     static SharedPreferences prefs;
 
+    public static void init(Context context) {
+        prefs = PreferenceManager.getDefaultSharedPreferences(context);
+    }
 
     public static boolean isNight() {
         return prefs.getBoolean("isNight", false);
@@ -21,9 +24,5 @@ public class SpUtil {
             ((BaseActivity) context).reload();
     }
 
-
-    public static void init(Context context) {
-        prefs = PreferenceManager.getDefaultSharedPreferences(context);
-    }
 
 }

@@ -12,7 +12,7 @@ import com.mvp.rutong.frame.base.RxManage;
 /**
  * Created by han_l on 2016/5/31.
  */
-public class ErrorUtil {
+public class E {
     private static Context context = App.getAppContext();
 
 
